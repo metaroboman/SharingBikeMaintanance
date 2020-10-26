@@ -1,0 +1,75 @@
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2020.1.13)  13 AUG 2020 22:11
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**"/Users/valarian/SJTU/SJTU/毕业论文/SharingBikeMaintainence/jse_Template-to author-2017最新/JSE Template-to author"
+(/Users/valarian/SJTU/SJTU/毕业论文/SharingBikeMaintainence/jse_Template-to author-2017最新/JSE Template-to author.tex
+Invalid UTF-8 byte or sequence at line 1 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 1 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 1 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 1 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 1 replaced by U+FFFD.
+
+LaTeX2e <2019-10-01> patch level 3
+Invalid UTF-8 byte or sequence at line 2 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 2 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 2 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 2 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 2 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 6 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 6 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 6 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 6 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 6 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 6 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 6 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 6 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 6 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 6 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 8 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 8 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 8 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 8 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 8 replaced by U+FFFD.
+(/usr/local/texlive/2019basic/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/10/25 v1.4k Standard LaTeX document class
+(/usr/local/texlive/2019basic/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2019/10/25 v1.4k Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+
+! LaTeX Error: File `CJK.sty' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+/Users/valarian/SJTU/SJTU/毕业论文/SharingBikeMaintainence/jse_Template-to author-2017最新/JSE Template-to author.tex:9: Emergency stop.
+<read *> 
+         
+l.9 \usepackage
+               {fancyhdr}^^M
+*** (cannot \read from terminal in nonstop modes)
+
+ 
+Here is how much of TeX's memory you used:
+ 217 strings out of 493983
+ 2586 string characters out of 6161157
+ 61133 words of memory out of 5000000
+ 4708 multiletter control sequences out of 15000+600000
+ 3648 words of font info for 15 fonts, out of 8000000 for 9000
+ 319 hyphenation exceptions out of 8191
+ 24i,0n,21p,262b,40s stack positions out of 5000i,500n,10000p,200000b,80000s
+No pages of output.

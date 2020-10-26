@@ -1,0 +1,8 @@
+
+
+Latex软件主页网址：http://www.ctex.org/HomePage 
+下载网址：主页上的“下载中心”：http://www.ctex.org/CTeXDownload 最好下载完整版。
+使用手册：主页上的“帮助文档”：可以逐一打开，内容非常详细。
+
+Latex使用说明亦可参考：http://www.ctex.org/OnlineDocuments
+

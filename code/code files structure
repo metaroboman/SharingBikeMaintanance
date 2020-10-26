@@ -1,0 +1,11 @@
+data analysis: 存放进行数据描述性分析和坏车贝叶斯更新代码
+
+
+queueing model：计算到达等过程的分布和稳态概率，使用矩阵近似计算方法得到稳态概率，检验queueing model仿真正确性
+
+
+simulation:存放仿真四种模型比较的代码
+
+
+RL: 存放DQN代码
+reinforcement_q_learning.ipynb: a tutorial of DQN

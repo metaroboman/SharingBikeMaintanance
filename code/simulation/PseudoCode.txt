@@ -1,0 +1,36 @@
+initiate Event, Bike and Block
+Event: the list of the activities going to happen in increasing series
+	time, block object, type of activity, bike object
+bike : id, block, number of served customers, lifetime
+Block: id, arriving_list, normal_bike_list, broken_bike_list, served_customers, lost_customers, add the first arriving event to Event
+
+while t < T:
+    
+    while event.time <= T:
+	#execute this event
+	#change the list of the block according to the type of the activity
+	#generate new event and add them to the Event list
+
+	if event == customer come in:
+	    if there is normal bike in normal_bike_list:
+	        served_customer of bike and block both add 1
+	        add the bike to the arriving_list of the objective block
+	        add the arriving event to Event list
+	        remove the bike from the normal_bike_list
+		next_arrive = time_of_customer_arrived + exponential(lambda)
+		add_event(next_arrival)
+	    else: 
+		#lost this customer
+		lost_customers = lost_customers + 1
+		next_arrive = time_of_customer_arrived + exponential(lambda)
+		add_event(next_arrival)
+
+	if event == bike come in:
+	    remove the bike from the arriving list
+	    if life < T:
+	   	add the bike to the normal_bike_list
+	    else: add the bike to the broken_bike_list
+
+    event = next event in Event
+
+    t = t + time_interval

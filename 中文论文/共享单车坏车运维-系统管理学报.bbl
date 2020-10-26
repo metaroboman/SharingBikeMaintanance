@@ -1,0 +1,162 @@
+\begin{thebibliography}{10}
+
+\bibitem{2002KN}
+A fully sequential procedure for indifference-zone selection in simulation.
+\newblock {\em Acm Transactions on Modeling and Computer Simulation}, 2002.
+
+\bibitem{adelman2007price}
+Daniel Adelman.
+\newblock Price-directed control of a closed logistics queueing network.
+\newblock {\em Operations Research}, 55(6):1022--1038, 2007.
+
+\bibitem{Caggiani2018A}
+Caggiani, Leonardo, Camporeale, Rosalia, Ottomanelli, Michele, Szeto, Wai, and
+  Yuen.
+\newblock A modeling framework for the dynamic management of free-floating
+  bike-sharing systems.
+\newblock {\em Transportation Research Part C Emerging Technologies}, 2018.
+
+\bibitem{2018AModeling}
+Leonardo Caggiani, Rosalia Camporeale, Michele Ottomanelli, and Wai~Yuen Szeto.
+\newblock A modeling framework for the dynamic management of free-floating
+  bike-sharing systems.
+\newblock {\em Transportation Research Part C Emerging Technologies},
+  87(FEB.):159--182, 2018.
+
+\bibitem{1975Allocation}
+Dudewicz Siddhartha~R. Dalal.
+\newblock Allocation of observations in ranking and selection with unequal
+  variances.
+\newblock {\em Sankhya Ser A}, B:37(1):28--78, 1975.
+
+\bibitem{george2011fleet}
+David~K George and Cathy~H Xia.
+\newblock Fleet-sizing and service availability for a vehicle rental system via
+  closed queueing networks.
+\newblock {\em European journal of operational research}, 211(1):198--207,
+  2011.
+
+\bibitem{2017Simulation}
+Nanjing Jian, Daniel Freund, Holly~M. Wiberg, and Shane~G. Henderson.
+\newblock Simulation optimizati on for a large-scale bike-sharing system.
+\newblock In {\em Winter Simulation Conference}, 2017.
+
+\bibitem{KaspiDetection}
+Mor Kaspi, Tal Raviv, and Michal Tzur.
+\newblock Detection of unusable bicycles in bike-sharing systems.
+\newblock {\em Omega}.
+
+\bibitem{Kaspi2017Bike}
+Mor Kaspi, Tal Raviv, and Michal Tzur.
+\newblock Bike sharing systems: User dissatisfaction in the presence of
+  unusable bicycles.
+\newblock {\em A I I E Transactions}, 49(2):144--158, 2017.
+
+\bibitem{Kim2001A}
+Seong~Hee Kim and Barry~L. Nelson.
+\newblock A fully sequential procedure for indifference-zone selection in
+  simulation.
+\newblock {\em Acm Transactions on Modeling and Computer Simulation},
+  11(3):251--273, 2001.
+
+\bibitem{2016ALi}
+Quan~Lin Li, Rui~Na Fan, and Jing~Yu Ma.
+\newblock A unified framework for analyzing closed queueing networks in bike
+  sharing systems.
+\newblock In {\em International Conference on Information Technologies and
+  Mathematical Modelling}, 2016.
+
+\bibitem{2017Li2}
+Quan-Lin Li, Rui-Na Fan, and Zhi-Yong Qian.
+\newblock A nonlinear solution to closed queueing networks for bike sharing
+  systems with markovian arrival processes and under an irreducible path graph.
+\newblock In Wuyi Yue, Quan-Lin Li, Shunfu Jin, and Zhanyou Ma, editors, {\em
+  Queueing Theory and Network Applications}, pages 118--140, Cham, 2017.
+  Springer International Publishing.
+
+\bibitem{2017FluidLi}
+Quan~Lin Li, Zhi~Yong Qian, and Rui~Na Fan.
+\newblock Fluid and diffusion limits for bike sharing systems.
+\newblock In {\em International Conference on Queueing Theory and Network
+  Applications}, 2017.
+
+\bibitem{2001Simple}
+Barry~L Nelson, Julie Swann, David Goldsman, and Wheyming Song.
+\newblock Simple procedures for selecting the best simulated system when the
+  number of alternatives is large.
+\newblock {\em Operations Research}, 49(6):950--963, 2001.
+
+\bibitem{Pal2017Free}
+Aritra Pal and Yu~Zhang.
+\newblock Free-floating bike sharing: Solving real-life large-scale static
+  rebalancing problems.
+\newblock {\em Transportation Research Part C Emerging Technologies},
+  80(jul.):92--116, 2017.
+
+\bibitem{Pal2017Analyzing}
+Aritra Pal, Yu~Zhang, and Changhyun Kwon.
+\newblock Analyzing mobility patterns and imbalance of free floating bike
+  sharing systems.
+\newblock 2017.
+
+\bibitem{2016Validation}
+Svenja Reiss and Klaus Bogenberger.
+\newblock Validation of a relocation strategy for munich's bike sharing system.
+\newblock {\em Transportation Research Procedia}, 19:341--349, 2016.
+
+\bibitem{Rinott1978On}
+Rinott and Yosef.
+\newblock On two-stage selection procedures and related
+  probability-inequalities.
+\newblock {\em Communications in Statistics Theory and Methods}, 7(8):799--811,
+  1978.
+
+\bibitem{2012ASO}
+Juan~P. Romero, Angel Ibeas, Jose~L. Moura, Juan Benavente, and Borja Alonso.
+\newblock A simulation-optimization approach to design efficient systems of
+  bike-sharing.
+\newblock {\em Procedia - Social and Behavioral Sciences},
+  54(Complete):646--655, 2012.
+
+\bibitem{Schuijbroek2017Inventory}
+J.~Schuijbroek, R.C. Hampshire, and W.-J. van Hoeve.
+\newblock Inventory rebalancing and vehicle routing in bike sharing systems.
+\newblock {\em European Journal of Operational Research}, 257, 2017.
+
+\bibitem{SheldonM2011应用随机过程}
+SheldonM.Ross.
+\newblock {\em 应用随机过程:概率模型导论}.
+\newblock 人民邮电出版社, 2011.
+
+\bibitem{welch1983statistical}
+Peter~D Welch.
+\newblock The statistical analysis of simulation results.
+\newblock {\em The computer performance modeling handbook}, 22:268--328, 1983.
+
+\bibitem{孙怡璇2018基于仿真的共享单车调度优化研究}
+孙怡璇; 周雨珊;~丛羽茜; 刘明.
+\newblock 基于仿真的共享单车调度优化研究.
+\newblock {\em 物流科技}, 041(010):56--61, 2018.
+
+\bibitem{中国共享出行发展报告}
+国家信息中心分享经济研究中心.
+\newblock {\em 中国共享出行发展报告}.
+\newblock 2019.
+
+\bibitem{王慧君2018共享单车盈利模式分析}
+王慧君; 朱建明.
+\newblock 共享单车盈利模式分析.
+\newblock {\em 企业经济}, v.37；No.453(05):137--146, 2018.
+
+\bibitem{温惠英2014基于迭代回归法的公共自行车投放量预测研究}
+温惠英; 杨曌照.
+\newblock 基于迭代回归法的公共自行车投放量预测研究.
+\newblock {\em 武汉理工大学学报(交通科学与工程版)},
+  000(002):245--248, 2014.
+
+\bibitem{徐国勋2019考虑损坏自行车回收的共享单车调度问题}
+徐国勋; 李妍峰;~向婷; 赵达.
+\newblock 考虑损坏自行车回收的共享单车调度问题.
+\newblock {\em 系统工程}, 2019.
+
+\end{thebibliography}

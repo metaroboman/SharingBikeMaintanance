@@ -1,0 +1,329 @@
+LaTex基本语法
+　
+　　1．LaTeX文件的框架如下：
+　　
+　　\documentclass{article}
+　　\begin{document}
+　　This is the body of the article
+　　\end{document}
+　　
+　　如果是中文，将\documentstyle{article}改为
+　　\documentstyle{carticle}
+　　
+　　第一句：\documentclass[选项]{类}，确定整篇文章的处理格式，期刊或者会议论文一般可选类为article，再付上控制全局格式的选项，比如字体、字号、页面格式、纸张大小等等。也有期刊直接提供类模板，比如 Lecture Notes in Computer Science，只要把相应的类名放到{类}里就OK了，不需要自己去费神。老版本此处使用\documentstyle。
+　　 接下来是包含一些使用的宏包来增强功能，\usepackage{宏包}，宏包包含在.sty文件中，用过的宏包有：CJK 支持中文环境；times TIMES字体；graphicx 插图；pyperref引用超链接。也有期刊提供宏包来定制格式，比如 IEEE Computer Society Press。感觉就像C语言里的#include一样为第三方提供接口。有些提供的样例文件中在documentclass的选项中添加宏包，这是与老版本兼容。
+　　以上为导言区，接着余下的都是正文部分，包含在\begin{document}和\end{document}内。Latex命令的作用对象和范围和 HTML的标签有点类似，有开始和结束标志，开始位置内会定义一些表现格式。导言区还可能有\pagestyle{选项}，页面样式，比如empty选项表示没有页眉和页脚。导言区还有其它全局性的设置等。
+　　正文部分首先是文章标题\title{标题}，然后是作者信息\author{作者信息}。其中作者信息多行表示，用\\断行，自动居中的。多个作者用\ and连接，自动按格式分列横排或者居中竖排。接着\maketitle表示本页为标题页，以便自动格式化。
+　　 接着是文章正文内容各部分了。摘要\begin{abstract}...\end{abstract}。章节为\section{第一层标题}， \subsection{第二层标题}。
+　　再后面是参考文献部分，用过两个方法。第一个方法是手工逐条在正文尾部的\begin{thebibliography}{最大条数}... \end{thebibliography}内加入“\bibitem{关键词}文献信息”，文章中引用的地方用\cite{关键词}，自动按加入的顺序编号，形如[1]。第二个方法是使用bibTex。建立一个文献数据库文件：数据库名.bib，里面有按字段填写的文献信息，以及相应的“引用关键词”。 bibTex会生成.bbl文件，其中包含引用文献具体内容，在正文末尾用\bibliography{文献数据库名}包含该文件内容，注意文献数据库名不能包含空格。文章中引用格式同前面的方法，文献数据库中被引用的文献按格式出现在文末，未被引用的文献可以使用\nocite{关键词}来使其出现在文末。后一种方法的好处有：一、文献数据库可以共享；二、文献的内容与表现格式分离，内容填写更清晰，也可以更好的控制格式比如文献的排列顺序。格式控制是在导言区加入\bibliographystyle{格式名}，其中格式包含在.bst文件里，可以是Latex提供的，也可以是期刊单位提供的。
+　　 从结构上看，文章算排版结束了。下面就文章正文内容的一些细节留些注意点。
+　　
+　　插图：使用graphics宏包很方便引用.eps格式图片，个人一般图片都是Matlab绘制图片，可以直接输出eps格式。特别地，PS的eps 不行。图片一般集中放当前目录下子目录中，使用子目录在导言中用\graphicspath{{子目录名/}}，这个里面的{}不能少，图片文件名被引用时即可省略子目录名，指明.eps时效率高。
+　　表格：表格单元都是由内容撑起的，可以使用 \rule[起始位置]{宽度}{高度}来撑起达到预期格式。rule定义的是一个矩形，起始位置指底线与当前行基准线的距离，负值表示底线在基准线下面。
+　　插图、表格、公式都可以贴上各自自动编号的标签\label{关键词}，引用时\ref{关键词}可以自动出现相应编号。
+　　 文章排版好了，输出文档需要注意几点。按照导言区格式设置，编译生成dvi作为中间预览基本不会有问题，但一般都需要最终pdf输出。
+　　
+　　2.简单的规则：
+　　（1）空格：Latex中空格不起作用。
+　　（2）换行：用控制命令“\\”,或“ \newline”.
+　　（3）分段：用控制命令“\par” 或空出一行。
+　　（4）换页：用控制命令“\newpage”或“\clearpage”
+　　（5）特殊控制字符：#，$, %, &, - ,{, }, ^, ~
+　　 要想输出这些控制符用下列命令：
+　　 \# \$ \% \& \- \{ \} \^{} \~{} $\blackslash$表示“ \”.。
+　　
+　　3．西文字符转换表
+　　
+　　rm 罗马字体 \it 意大利字体
+　　\bf 黑体 \sl 倾斜体
+　　\sf 等线体 \sc 小体大写字母
+　　\tt 打字机字体 \mit 数学斜体
+　　
+　　4．字号转换命令表
+　　
+　　点数(pt) 相应中文字号 控制命令
+　　25 一号 \Huge
+　　20 二号 \huge
+　　17 三号 \LARGE
+　　14 四号 \Large
+　　12 小四号 \large
+　　10 五号 \normalsize
+　　9 小五号 \small
+　　8 六号 \footnotesize
+　　7 小六号 \scriptsize
+　　5 七号 \tiny
+　　
+　　5．纵向固定间距控制命令
+　　
+　　\smallskip \medskip \bigskip
+　　
+　　6．页面控制命令：
+　　
+　　\textwidth=14.5cm
+　　\textheight=21.5cm
+　　
+　　系统默认：字号10pt= 五号字；西文字体为罗马字体；
+　　textwidth=12.2cm,textheight=18.6cm。相当于美国标准信纸大小。
+　　
+　　7．常见数学公式排版命令
+　　
+　　（1）行中数学公式状态命令
+　　
+　　 \begin{math} 数学公式 \end{math}
+　　简式1： \( 数学公式 \)
+　　简式2： $ 数学公式 $
+　　
+　　（2）独立数学公式状态命令
+　　
+　　\begin{displaymath} 数学公式 \end{displaymath}
+　　
+　　简式1： \[ 数学公式 \]
+　　简式2： $$ 数学公式 $$
+　　
+　　（三）数学公式的编辑示例
+　　
+　　数学公式中的各种字体：
+　　
+　　$$
+　　\begin{array}{l}
+　　\mathrm{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\%罗马字体
+　　\mathtt{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\%打字机字体
+　　\mathbf{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\%黑体
+　　\mathsf{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\%等线体
+　　\mathit{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\%意大利字体
+　　\end{array}
+　　$$
+　　
+　　文中数学公式用$作为定界符，对于独立公式用$$作为定界符。上标用“^”，下标用“_”。 例如：
+　　$ x^{y^{z^{w}}}=(1+{\rm e}^{x})^{-2xy^{w}} $，
+　　$y_1'+y_2''+y_3'''$，
+　　Su$^{\rm per}_{\rm b}$script等等。
+　　
+　　数学中花体字母”\cal”命令. 例如：
+　　$\cal {ABCDEFGHIJKLMNOPQRSTUVW}$
+　　
+　　下面是方程环境的控制命令：方程会自动加上序号（1）....
+　　\begin{equation}
+　　0.3x+y/2=4z
+　　\end{equation}
+　　
+　　求和与积分命令：
+　　$$\sum_{i=1}^{n} x_{i}=\int_{0}^{1}f(x)\, {\rm d}x $$
+　　$$\sum_{{1\le i\le n}\atop {1\le j\le n}}a_{ij}$$
+　　$\sum\limits_{i=1}^{n} x_{i}=\int_{0}^{1}f(x)\, {\rm d}x $ $\oint $
+　　
+　　数学公式中省略号：
+　　 $\cdots \ldots \vdots \ddots $
+　　
+　　求极限的命令：
+　　$$\lim_{n \rightarrow \infty}\sin x_{n}=0$$ %n趋于无穷符号在lim正下方
+　　$\lim_{n \rightarrow \infty}\sin x_{n}=0$ %趋于无穷符号在lim右下角
+　　
+　　分式的排版命令：
+　　$$x=\frac{y+z/2}{y^2+\frac{y}{x+1}}$$
+　　$$a_0+\frac 1{\displaystyle a_1
+　　 +\frac 1{\displaystyle a_2
+　　 +\frac 1{\displaystyle a_3
+　　 +\frac 1{\displaystyle a_4
+　　 +\frac 1{\displaystyle {a_5}}}}}}$$
+　　
+　　根式排版命令：
+　　$$x=\sqrt{1+\sqrt{1+\sqrt[n]{1+\sqrt[m]{1+x^{p}}}}}$$
+　　$$x_{\pm}=\frac{-b\pm \sqrt{b^2-4ac}}{2a}$$
+　　
+　　取模命令：
+　　$\gcd(m,n)=a\bmod b$
+　　$$x\equiv y \pmod{a+b}$$
+　　
+　　矩阵排版命令：
+　　$$
+　　\begin{array}{clcr}
+　　x+y+z & uv & a-b & 8\\
+　　x+y & u+v & a & 88\\
+　　x & 3u-vw & abc &888\\
+　　\end{array}
+　　$$
+　　
+　　$$\left ( \begin{array}{c}
+　　\left |\begin{array}{cc}
+　　a+b&b+c\\c+d&d+a
+　　\end{array}
+　　\right |\\
+　　y\\z
+　　\end{array}\right )
+　　$$
+　　
+　　数学符号的修饰：
+　　（1）上划线命令
+　　$$\overline{1+\overline{1+\overline{x}^3}}$$
+　　
+　　（2）下划线命令
+　　$$\underline{1+\underline{1+\underline{x}^3}}$$
+　　
+　　（3）卧式花括号命令
+　　$$\overbrace{x+y+z+w}$$
+　　$$\overbrace{a+b+\cdots +y+z}^{26}_{=\alpha +\beta}$$
+　　
+　　（4）仰式花括号命令
+　　$$a+\underbrace{b+\cdots +y}_{24}+z$$
+　　
+　　（5）戴帽命令
+　　$$\hat{o}\ \ \check{o}\ \ \breve{o}$$
+　　$$\widehat{A+B} \ \ \widetilde{a+b}$$
+　　$$\vec{\imath}+\vec{\jmath}=\vec{k}$$
+　　
+　　（6）堆砌命令
+　　$$y\stackrel{\rm def}{=} f(x) \stackrel{x\rightarrow 0}{\rightarrow} A$$
+　　
+　　（四）中英文LaTeX模板
+　　
+　　(1)下面给出的是中文LaTeX2e模板，此时文件的扩展名为.ctx。模板中%后面的中文是中文注解，读者可以阅读这些模板中的中文注解，以理解所涉及的LaTeX2e命令的含义。
+　　
+　　\documentclass[11pt]{ccart}%文件类说明
+　　%还可以选择的类是cctbook
+　　\setlength{\parindent}{12pt} %自然段第一行的缩进量为12pt
+　　\setlength{\parskip}{10pt plus1pt minus1pt}
+　　%自然段之间的距离为10pt，并可在8pt到11pt之间变化
+　　\setlength{\baselineskip}{8pt plus2pt minus1pt}
+　　%行间距为8pt，并可在7pt到10pt之间变化
+　　\setlength{\textheight}{21true cm}%版面高为21厘米
+　　\setlength{\textwidth}{14.5true cm}%版面宽为14.5厘米
+　　\begin{document}%正文开始
+　　\title{Thesis}%文章标题，双反斜杠\\ 表示换行
+　　\author{author\\Dept. of Math.}
+　 %作者名，单位，通信地址等，双反斜杠\\ 表示换行
+　　\date{2003/8/5}
+　　%文章写作日期，如果省略此行，计算机日期作为写作日期
+　　\maketitle%建立标题部分
+　　%文章的正文输入
+　　\begin{center}%参考文献的书写
+　　{\heiti 参考文献}
+　　\end{center}
+　　\vskip 0.1cm
+　　\def\hang{\hangindent\parindent}
+　　\def\textindent#1{\indent\llap{#1\enspace}\ignorespaces}
+　　\def\re{\par\hang\textindent}
+　　\re{[1]} Nordhaus E,Stewart B,WhiteA.On the Maximum Genus of a Graph.{\it J.combinatorial Theory B},1971,11:258-267
+　　\re{[2]} Skoviera M.The Maximum Genus of Graphs of Diameter Two.{\it Discrete
+　　Math}.1991, 87:175-180
+　　\end{document}%源文件的结束
+　　
+　　（2）英文LaTeX2e模板
+　　
+　　\documentclass[11pt]{article}%文件类说明
+　　%还可以选择的类是book,report
+　　\setlength{\parindent}{12pt} %自然段第一行的缩进量为12pt
+　　\setlength{\parskip}{10pt plus1pt minus1pt}
+　　%自然段之间的距离为10pt，并可在8pt到11pt之间变化
+　　\setlength{\baselineskip}{8pt plus2pt minus1pt}
+　　%行间距为8pt，并可在7pt到10pt之间变化
+　　\setlength{\textheight}{21true cm}%版面高为21厘米
+　　\setlength{\textwidth}{14.5true cm}%版面宽为14.5厘米
+　　\begin{document}%正文开始
+　　\title{Thesis}%文章标题，双反斜杠\\ 表示换行
+　　\author{author\\Dept. of Math.}
+　　%作者名，单位，通信地址等，双反斜杠\\ 表示换行
+　　\date{2003/8/5}
+　　%文章写作日期，如果省略此行，计算机日期作为写作日期
+　　\maketitle%建立标题部分
+　　%文章的正文输入
+　　\section{Introduction}%第一节 引言（机器自动编号）
+　　{\bf Theorem 1.} {\it For any fixed $\rho>0$, we have
+　　$$||R(u,\rho)||\leq ||R_1(u,\rho)||\leq 2||R(u,\rho)||,~~~\forall u\in H.
+　　\eqno(10)$$ Hence, (2) and (3) are equivalent for any fixed$\rho>0$.}
+　　%一般定理的写法
+　　{\bf Proof.}
+　　\begin{thebibliography}{99}
+　　\bibitem{Kind} D. Kinderlehrer and G. Stampacchia, {\it An Introduction to Variational Inequalities and Their Applications}, Academic Press,New York,
+　　(1980).
+　　\end{thebibliography}%参考文献
+　　\end{document}%源文件的结束
+　　
+　　(五)疑难解析
+　　
+　　1.问题:如何生成ps(PostScript)文件？
+　　
+　　回答: 方法有二
+　　（1）用dvips这个工具，在WinEdt编辑器中专门有一个按钮；
+　　（2）如果使用windows系统的话，在打印机中安装HP LaserJet 4/4M PostScript的驱动程序。在浏览DVI文件的时候，打印到文件就可以了。文件是保存为*.prn的，您只要改他为*.ps就可以了。
+　　
+　　2.问题: 如何插入图象？
+　　
+　　回答:我知道的方法有，
+　　（1）使用emtex下的img2cct.exe工具。
+　　首先将图象改变为单色BMP，用画笔就可以做这件事情，提醒在保存的时候一定要存为单色图。例如有单色BMP文件test.bmp，然后执行命令：img2cct test.bmp -t3 -c0 具体img2cct的参数，可以直接执行"img2cct.exe"来查看，最后将img2cct.exe生成的test.tex文件的代码拷贝到您的文章中，适当调整位置，就可以了。
+　　（2）使用 Scientific WorkPlace(Word) 的用户，只要菜单上File/Import Picture功能就行。
+　　（3）利用绘图软件LaTeXCAD,可直接将图变成LaTeX语言。
+　　（4）利用软件将图象格式另存为ps格式。
+　　\usepackage{graphicx}
+　　\begin{document}
+　　\includegraphics{your.ps}
+　　\end{document}
+　　
+　　3.问题:现在很多文章的定理,定义,推论, 例子都采用统一编号,不再是独立编号,如定义1.1,接下来可能是定理1.2,然后推论1.3怎么做一个总的框架环境，实现这种自动的编号呢?
+　　
+　　回答:\newtheorem{athm}{\heiti \t}[section]
+　　 \newenvironment{thm} [1] {\def\t{#1}
+　　 \begin{athm} \fangsong \rm} {\end {athm}}
+　　 正文中如下使用即可：
+　　 \begin{thm}{定义}
+　　 \end{thm}
+　　 或 begin{thm}{定理}
+　　 \end{thm} 等等.
+　　
+　　4.问题:在公式或定理,定义编号上,我不想按原来的格式,如定理4.2,而想用
+　　定理4.1.2. 或者就直接定理123, 怎么作修改?
+　　
+　　回答: 用\renewcommand重新定义一下标号就可以了.
+　　 \renewcommand {\theequation} {\arabic{chapter}.
+　　 \arabic{section}.\arabic{eqation}
+　　重新定义后标号就成了4.1.2这样的了.(在article风格中是section和subsection)
+　　
+　　5.问题:怎么使用不同的字号和字体?(中英文)，怎么使用双页?(就象书那样)
+　　 \documentstyle后面的选项和格式都有什么?
+　　
+　　回答:（1）关于字号,你如果是想改通篇文章的字号.最简单的方法是将第一句\documentstyle[选项]{格式} 中的选项作修改。
+　　(选项有...,9pt,10pt(默认),11pt,...;twoside,twocolumn,proc,oneside(默认); leqno(默认),fleqn,epsf. 格式有book,report,article,letter;cbook,carticle,...)
+　　（2）如想选用双页,就用twoside,(cbook默认就是twoside,页码在上面,章的首页页码在下。
+　　（3）在正文某处想改字号大小, 英文用\tiny, \scriptsize, \footnotesize, \small, \normalize,\large, \Large, \LARGE, \huge, \Huge； 中文用 \zihao{n} 此处n可取值: 0(初号),1(一号),2(二号),3(三号),4(四号),-4(小四),5,-5,6,7等。
+　　（4）关于字体, 英文常用的: \bf黑体, \rm罗马, \sl斜体, \cal花体， \sc, \it公式缺省, \sf等线体。中文常用: \songti, \kaishu, \heiti, \fangsong, \biaosong,。
+　　
+　　5.问题：LaTeX 如何生成目录？
+　　
+　　回答：1.最好自己定义目录形式，美观方便，下面是定义好的几个，你不妨试试
+　　（1）\def\mlA#1#2#3{\par\noindent\hspace*{1 true cm}\parbox[b]{12.3 true cm}
+　　 {\protect\hspace*{-1 true cm}{#1}\quad{#2}~\dotfill~}
+　　 \hbox to1.0 true cm{~(\hss#3\hss)}\vspace{2mm}}
+　　（2）\def\mlB#1#2#3{\par\noindent\hspace*{1 true cm}\parbox[b]{12.3 true cm}
+　　{\protect\hspace*{-1 true cm}{#1}~\dotfill~\hbox{#2}}
+　　 \hbox to1.0 true cm{~(\hss#3\hss)}\vspace{2mm}}
+　　（3）\def\mlC#1#2{\par\noindent\hspace*{1 true cm}\parbox[b]{12.3 true cm}
+　　{\protect\hspace*{-1 true cm}\quad{#1}~\dotfill~}
+　　\hbox to1.0 true cm{~(\hss#2\hss)}\vspace{2mm}}
+　　（4）\def\mlD#1#2{\par\noindent\hspace*{1 true cm}\parbox[b]{12.3 true cm}
+　　 {\protect\hspace*{-1 true cm}\quad{#1}~\hfill~}
+　　 \hbox to1.0 true cm{~(\hss#2\hss)}\vspace{2mm}}
+　　
+　　 2.使用方法如下：
+　　 \mlA{title}{author}{page no.}
+　　 效果： title author .................. (page no.)
+　　 \mlB{title}{author}{page no.}
+　　 效果：title .......................... author (page no.)
+　　 \mlC{title}{page no.}
+　　 效果： title ......................... (page no.)
+　　 \mlD{title}{page no.}
+　　 效果： title (page no.)
+　　
+　　6.问题：LaTeX中如何使公式编号具有(1.2)这种格式?
+　　
+　　回答：\documentclass{article}
+　　 \usepackage{amsmath}
+　　 \numberwithin{equation}{section}
+　　 \begin{document}
+　　 \section{my section}
+　　 \begin{equation}
+　　 x^2+y^2=1
+　　 \end{equation}
+　　 \end[document] 
+
+本文来自CSDN博客，转载请标明出处：http://blog.csdn.net/nangergong/archive/2009/07/06/4324037.aspx

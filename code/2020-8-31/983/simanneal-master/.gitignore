@@ -1,0 +1,10 @@
+*.pyc
+*.egg-info
+dist/*
+*.state
+build
+dist
+htmlcov
+cython
+.coverage
+.cache

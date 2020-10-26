@@ -1,0 +1,676 @@
+%中文latax模版
+%中文latax模版
+\documentclass[10.5pt,onecolumn,twoside]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  packages
+%    这部分声明需要用到的包
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{CJK}         % CJK 中文支持
+\usepackage{fancyhdr}
+\usepackage{array}%表的长度设置
+\usepackage{amsmath,amsfonts,amssymb,graphicx}    % EPS 图片支持
+\usepackage{subfigure}   % 使用子图形
+\usepackage{indentfirst} % 中文段落首行缩进
+\usepackage{bm}          % 公式中的粗体字符(用命令\boldsymbol)
+\usepackage{multicol}    % 正文双栏
+\usepackage{indentfirst} % 中文首段缩进
+\usepackage{picins}      % 图片嵌入段落宏包 比如照片
+\usepackage{abstract}    % 2栏文档, 一栏摘要及关键字宏包
+\usepackage{amsthm}      % 使用定理
+\usepackage{booktabs}    % 使用表格
+\usepackage{titlesec}
+\usepackage{times}
+\usepackage{wasysym}
+\usepackage[sort]{cite}
+\usepackage[font=small,labelfont=bf,labelsep=none]{caption}
+\def\citedash{$-$} % for creating cites like [3, 4], [7~10]
+%\renewcommand{\theequation}{\thesection.\arabic{equation}}(公式按节编号)
+%\def \s {{\bf s}}
+%\def \A {{\bf A}}
+%\def \u {{\bf u}}
+%\def \C{{\rm C}}
+%\def \NB {{\rm NB}}
+%\def \d {{\rm d}}
+%\def \e {{\rm e}}
+%\def \E {{\rm E}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\providecommand{\argmin}{\mathop{\mathrm{arg\,min}}}%%%自定义新命令
+\providecommand{\Max}{\mathop{\mathrm{Max}}}
+\providecommand{\Min}{\mathop{\mathrm{Min}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def \Y {{\rm xxxx}}  % 出版年
+\def \CM {{\rm xx}}   % 出版月
+\def \EM {{\rm xxxx}} % 出版月(英文)
+\def \Vol {{\rm xx}}  % 卷号
+\def \No {{\rm x}}    % 期号
+\def \ZNo {{\rm 113}} % 总期号
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  lengths
+%    下面的命令重定义页面边距，使其符合中文刊物习惯。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{lettrine}
+\linespread{1.3} \setlength{\voffset}{0pt}
+\setlength{\topmargin}{0pt} \setlength{\headsep}{3mm}
+\setlength{\textheight}{240mm} \setlength{\textwidth}{170mm}
+\setlength{\hoffset}{3pt} \setlength{\parskip}{1pt}
+\setlength{\columnsep}{7mm} \setlength{\arraycolsep}{1pt}
+\setlength{\parindent}{2em} %段首缩进两字符%%%添加的命令
+\renewcommand{\baselinestretch}{1.25} %定义行间距
+\setcounter{page}{1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 标题，基金项目，作者，通信地址定义,
+%点数(pt) 相应中文字号 控制命令 %　　25 一号 \Huge%　　20 二号 \huge%　　17 三号 \LARGE
+%　　14 四号 \Large%　　12 小四号 \large%　　10 五号 \normalsize%　　9 小五号 \small
+%　　8 六号 \footnotesize%　　7 小六号 \scriptsize%　　5 七号 \tiny
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\setcounter{page}{1} % 此命令为重新设置页码，即把 1 处改为需要的页码即可
+
+
+\begin{CJK}{GBK}{song}
+\title{\huge {\CJKfamily{hei} 题目}%二号，黑体
+\footnotetext{\small  \hskip -6pt%小五
+收稿日期: xxxx$-$xx$-$xx; 修订日期: xxxx$-$xx$-$xx.\\
+\hspace*{1.0em}基金项目: 国家自然科学基金资助项目(基金号);
+教育部重点科研基金资助项目(基金号).}}
+\author{{\Large {\CJKfamily{kai}张~~~~三\makebox{$^{1}$},~~李某某\makebox{$^{2}$}}}\\%四号，楷体
+\normalsize
+ (1. 天津大学系统工程研究所, 天津~300072;\\
+\normalsize
+ 2. 南京大学工程管理学院,  江苏~南京~210093) \\} %%除了直辖市外，加上省份
+\date{}     % 这一行用来去掉默认的日期显示
+\end{CJK}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 首页页眉页脚定义
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fancypagestyle{plain}{ \fancyhf{} %plain 小五宋体
+\lhead{\small  第~\Vol~卷 第~\No~期\\
+{\Y~年~\CM~月}}
+\chead{\centering{\small 系~~统~~工~~程~~学~~报\\
+\small JOURNAL OF SYSTEMS ENGINEERING}}
+\rhead{\small {Vol.\Vol ~No.\No}\\
+{\EM ~\Y}} \lfoot{} \cfoot{} \rfoot{}
+\renewcommand{\headrule}{%
+\hrule height0.4pt width \headwidth \vskip1.0pt%
+\hrule height0.4pt width \headwidth \vskip-2pt}}
+%\renewcommand{\footrulewidth}{0.4pt}
+%\setlength{\hoffset}{0.1pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 首页后根据奇偶页不同设置页眉页脚
+% R,C,L分别代表左中右，O, E代表奇偶页
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{plain} \fancyhf{} \fancyhead[RE]{{\small{\CJKfamily{song}  %plain 小五宋体
+\vspace{3ex}第~\Vol~卷~~~}}} \fancyhead[CE]{{\small
+{\CJKfamily{song}系~~统~~工~~程~~学~~报}}}
+\fancyhead[LE,RO]{~~~\small\thepage ~~~}
+\fancyhead[CO]{{\small{\CJKfamily{song} 张三等: 题目}}}
+\fancyhead[LO]{{\small {\CJKfamily{song}~~~第~\No~期}}} \lfoot{}
+\cfoot{} \rfoot{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 正文两栏环境不允许float环境，比如 figure, table。所以重新定义
+% figure，使之可以浮动到你想要的位置。table也同样，把figure改为
+% table就可以。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newenvironment{figurehere}
+%  {\def\@captype{figure}}
+%  {}
+%\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  文章正文
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\makeatletter
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {-1pt }%
+                                   {1pt}%
+                                   {\normalfont\large\bfseries}}
+\renewcommand\subsection{\@startsection {subsection}{1}{\z@}%
+                                   {-1pt }%
+                                   {1pt}%
+                                   {\normalfont\normalsize\bfseries}}
+\makeatother
+\begin{CJK*}{GBK}{song}
+\CJKcaption{GB}
+   \renewcommand\figurename{图}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  定理 定义 推论格式.
+%  在任何用到的地方，用\begin{Thm} ... \end{Thm}; 将其括起来。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mystyle}{3pt}{3pt}{}{\parindent}{\bfseries}{}{5mm}{}
+\theoremstyle{mystyle}\newtheorem{Cor}{\normalsize{{\CJKfamily{hei} 推论}}}
+\newtheoremstyle{mystyle}{3pt}{3pt}{}{\parindent}{\bfseries}{}{5mm}{}
+\theoremstyle{mystyle}\newtheorem{Thm}{\normalsize{{\CJKfamily{hei} 定理}}}
+\newtheoremstyle{mystyle}{3pt}{3pt}{}{\parindent}{\bfseries}{}{5mm}{}
+\theoremstyle{mystyle}\newtheorem{Site}{\normalsize{{\CJKfamily{hei} 引理}}}
+\newtheoremstyle{mystyle}{3pt}{3pt}{}{\parindent}{\bfseries}{}{5mm}{}
+\theoremstyle{mystyle}\newtheorem{Def}{\normalsize{{\CJKfamily{hei} 定义}}}
+\newtheoremstyle{mystyle}{3pt}{3pt}{}{\parindent}{\bfseries}{}{5mm}{}
+\theoremstyle{mystyle}\newtheorem{Rem}{\normalsize{{\CJKfamily{hei} 注}}}
+\newtheoremstyle{mystyle}{3pt}{3pt}{}{\parindent}{\bfseries}{}{5mm}{}
+\theoremstyle{mystyle}\newtheorem{Sup}{\normalsize{{\CJKfamily{hei} 假设}}}
+\newtheoremstyle{citing}{3pt}{3pt}{}{}{\bfseries}{.}{.5em}{\thmnote{#3}}
+\theoremstyle{citing}\newtheorem*{citedthm}{}
+\renewcommand\refname{\normalsize{{\CJKfamily{hei}参考文献:}}}
+\abovedisplayskip=3pt %plus 3pt
+\abovedisplayshortskip=3pt% plus 3pt
+\belowdisplayskip=7pt %plus 3pt
+\belowdisplayshortskip=7pt %plus 3pt
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  自定义命令
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 此行使文献引用以上标形式显示
+\newcommand{\supercite}[1]{\textsuperscript{\cite{#1}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  显示title，并设页码为空(按杂志社要求）
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\maketitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  中文摘要
+%  调整摘要、\!\!关键词，中图分类号的页边距
+%  中英文同时调整
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\oddsidemargin}{ 1cm}  % 3. 17cm - 1 inch
+\setlength{\evensidemargin}{\oddsidemargin}
+\setlength{\textwidth}{15.5cm} \vspace{-1.3cm}
+\begin{center}
+\parbox{\textwidth}{\setlength{\parindent}{0em}
+\vspace{5mm} \small {\CJKfamily{hei} 摘要:}%%小五，楷体
+{\CJKfamily{kai}多源不确定性因素通过对工人成本控制业绩的影响增加了管理者在收益上的风险, 管理者为了分担此风险与工人签订双标准成本控制契约, 但当不确定因素扰动较大时, 由于激励系数过低, 容易引致该契约失效. 在成本管理系统框架下将三维度相对业绩引入双标准成本控制契约, 可剔除个人资源、企业内部环境和外部环境干扰, 改善成本控制激励机制. 因此, 有必要研究相对业绩的引入对成本控制激励机制的改善机理和相关参数对新契约中最优激励系数和最优调节系数的作用方式. 研究结果表明: 引入三维度相对业绩可有效降低系统代理成本, 提高激励强度、努力程度和管理者收益. 最优业绩激励系数与工人能力、相对业绩协方差的平方呈正相关, 与工人努力成本系数、风险规避度、外界不确定因素方差和被引入相对业绩方差呈负相关. 任一维度相对业绩的调节系数仅与该维度业绩的协方差和方差相关, 调节系数与协方差异号, 其绝对值与协方差的绝对值呈正相关, 与方差呈负相关.在企业成本控制活动中, 管理者和工人间产生了委托代理问题, 并由此签订双标准成本控制契约. 针对工人成本控制业绩受到的较大干扰可能导致激励契约失效的问题, 在成本管理系统框架下将三维度相对业绩引入双标准成本控制契约, 以剔除个人资源、企业内部环境和外部环境干扰, 改善成本控制激励机制. 在此基础上研究了引入相对业绩后, 相关参数对新契约中最优激励系数和最优调节系数的作用方式和成本控制激励机制的改善机理. 结果表明: 新契约中最优业绩激励系数与工人能力、相对业绩协方差的平方呈正相关, 与工人努力成本系数、风险规避度、外界不确定因素方差和被引入相对业绩方差呈负相关; 任一维度相对业绩的调节系数仅与该维度业绩的协方差和方差相关, 调节系数与协方差异号, 其绝对值与协方差的绝对值呈正相关, 与方差呈负相关; 引入三维度相对业绩可有效降低系统代理成本, 提高激励强度、工人努力程度和管理者收益; 工人成本控制方面的素质、外部风险、相对业绩的方差和协方差均可影响成本控制激励机制的改善效果.}
+\vspace{5mm}
+
+{\CJKfamily{hei} 关键词:} 关键词; 关键词; 关键词; 关键词
+
+{\CJKfamily{hei}中图分类号: TP273}  \qquad~~
+{\CJKfamily{hei}文献标识码: A }
+\qquad~~ {\CJKfamily{hei} 文章编号:
+1000$-$5781(\Y)0\No$-$0000$-$00}}  % 此处的文章编号请不要改动、不要删除！
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  英文摘要
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{.1cm}
+\begin{center}
+\parbox{\textwidth}{\setlength{\parindent}{0em}
+{\centering \Large\textbf{Title\\}} \vspace{3.2mm}%%四号，黑体
+\begin{center}
+{\bf{Zhang San}\makebox{$^{1}$},~~\bf{Li Moumou}}\makebox{$^{2}$ }\\[2pt]
+\small{(1. Institute of Systems Engineering, Tianjin University, Tianjin 300072, China;\\
+2. School of Management and Engineering, Nanjing University, Nanjing 210093, China )}
+\end{center}
+
+\normalsize{\textbf{Abstract:} This article is designed to help in
+the contribution for Journal of Systems Engineering. It is divided
+into several sections. It consists of the styles and notes for the
+main text, the Mathematical writing style and  the topic of drawing
+tables and inserting figures, respectively. The residuals deal with
+references, appendix, acknowledges, etc.
+
+ \vspace{5mm}
+
+\textbf{Key words:} keyword; keyword; keyword; keyword }}
+\vspace{5mm}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  文章编号(左上角)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  正文由此开始－－－－－－－－－－－－－－－－－－－－－－－－－
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  恢复正文页边距
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\oddsidemargin}{-.5cm}  % 3. 17cm - 1 inch
+\setlength{\evensidemargin}{\oddsidemargin}
+\setlength{\textwidth}{17.00cm} \CJKfamily{song}
+
+\fontsize{10.5bp}{12.9bp}\selectfont
+\section{{\CJKfamily{hei}引~~~~言}}%%节的标题，图表等的标题中文均为黑体
+ \vspace{5mm}
+
+\begin{figure}
+ \begin{minipage}[t]{0.5\textwidth}
+ \centering
+ \includegraphics[width=2.2in]{NN1.eps}
+ \caption{}
+ \label{fig:side:a}
+ \end{minipage}%
+ \begin{minipage}[t]{0.5\textwidth}
+ \centering
+ \includegraphics[width=2.2in]{NN2.eps}
+ \caption{}
+ \label{fig:side:b}
+ \end{minipage}
+ \end{figure}
+
+\begin{equation}
+\Delta\beta=\frac{\beta^{*}-\beta_{0}}{\beta_{0}}
+=\frac{m\rho(\frac{\varphi_{1}^{2}}{\sigma_{1}^{2}}+\frac{\varphi_{2}^{2}}{\sigma_{2}^{2}}+\frac{\varphi_{3}^{2}}{\sigma_{3}^{2}})}
+{\lambda^{2}+m\rho(\sigma^{2}-\frac{\varphi_{1}^{2}}{\sigma_{1}^{2}}-\frac{\varphi_{2}^{2}}{\sigma_{2}^{2}}-\frac{\varphi_{3}^{2}}{\sigma_{3}^{2}})},
+\end{equation}
+
+\begin{equation}
+\Delta e=\frac{e^{*}-e_{0}}{e_{0}}=\frac{m\rho(\frac{\varphi_{1}^{2}}{\sigma_{1}^{2}}+\frac{\varphi_{2}^{2}}{\sigma_{2}^{2}}+\frac{\varphi_{3}^{2}}{\sigma_{3}^{2}})}
+{\lambda^{2}+m\rho(\sigma^{2}-\frac{\varphi_{1}^{2}}{\sigma_{1}^{2}}-\frac{\varphi_{2}^{2}}{\sigma_{2}^{2}}-\frac{\varphi_{3}^{2}}{\sigma_{3}^{2}})},
+\end{equation}
+
+\begin{equation}
+\Delta E(v)=\frac{E(v)^{*}-E_{0}(v)}{E_{0}(v)}=\frac{\lambda^{4}m\rho(\frac{\varphi_{1}^{2}}{\sigma_{1}^{2}}+\frac{\varphi_{2}^{2}}{\sigma_{2}^{2}}+\frac{\varphi_{3}^{2}}{\sigma_{3}^{2}})}
+{(\lambda^{2}+m\rho(\sigma^{2}-\frac{\varphi_{1}^{2}}{\sigma_{1}^{2}}-\frac{\varphi_{2}^{2}}{\sigma_{2}^{2}}-\frac{\varphi_{3}^{2}}{\sigma_{3}^{2}}))
+(\lambda^{4}-2\overline{\mu}m(\lambda^{2}+m\rho\sigma^{2}))},
+\end{equation}
+
+\begin{equation}
+\Delta AC=\frac{AC_{0}-AC}{AC_{0}}=\frac{\lambda^{2}(\frac{\varphi_{1}^{2}}{\sigma_{1}^{2}}+\frac{\varphi_{2}^{2}}{\sigma_{2}^{2}}+\frac{\varphi_{3}^{2}}{\sigma_{3}^{2}})}
+{\sigma^{2}(\lambda^{2}+m\rho(\sigma^{2}-\frac{\varphi_{1}^{2}}{\sigma_{1}^{2}}-\frac{\varphi_{2}^{2}}{\sigma_{2}^{2}}-\frac{\varphi_{3}^{2}}{\sigma_{3}^{2}}))}.
+\end{equation}
+
+
+ 本文中几点需要特别的说明内容, 主要是以下几个方面:
+
+标题: 一般的文章包含一级标题, 二级标题甚至三级标题, 例如: 2;
+2.1; 2.1.1等.
+
+参考文献:  引证的参考文献限于公开发表的，其排列次序按文中出现先后为准。
+ 即：文章中的参考文献的引用应该按从小到大的顺序, 例如:
+因此这一控制方法已在控制理论领域引起了广泛的关注其应用不仅
+限制于机器人控制领域\textsuperscript{\cite{1,2}},
+而且在非线性系统的鲁棒
+控制上也有了较大的发展\textsuperscript{\cite{3,4,5,6}}, 此外,
+在离散系统, 分布参数系统上有了相应的应用\textsuperscript{\cite{7,8,9}}.
+这一控制方法正在逐步形成控制理论领域中的一个新方向,
+具体可以参见文献\cite{10}.
+
+参考文献的著录格式:
+
+期刊格式的论文：序号  作者(姓前名后).
+文章题目[J]. 期刊名, 年份, 卷号(期数)：起止页码； 具体参见参考文献
+\cite{1,2,4,9,10,11,12,13}.
+
+专著, 论文集, 学位论文, 报告：序号
+作者(姓前名后). 书名[M、C、D、R]. 版本. 出版地：出版社， 出版年:
+起止页码. 例如：参考文献 \cite{3,5,6,7,8,14,15}.
+
+论文集中的析出文献格式：序号 作者(姓前名后). 析出文献题名[M、C]//
+原文献主要责任者(任选). 原文献题名. 出版地：出版者，出版年:
+析出文献起止页.
+
+外国人名缩写点省略. 中文文献应列出对应的英文译文.
+例如：参考文献\cite{2,10,13}.
+
+凡非公开出版的论文或图书不能列入参考文献栏, 如非说明不可, 则可加注,
+并在同页底说明出处, 但需使读者有处可查.
+
+
+数学符号: 文章中的数学符号, 例如 $x,y,z$等. 在以下的相关部分中会有
+具体的公式的例子.
+
+插图: 文中插图请用计算机绘制(EPS图形格式), 插图的精度应该满足印刷版的基本要求, 分辨率要达到600像素/英寸.  注明图序、中英文对照图题; 图中的术语、符号、单位等应同表及文字表述一致; 图中文字用6号宋体字; 变量用斜体. 图的标题应该有中英文两种形式, 标题在图的正下方, 例子见第4节.
+
+表格: 表格用三线表, 即: 表格中没有竖线,
+只有三条横线(特殊情形可以为两条等), 上线下线用粗线, 中间用细线; 表中同列数据个位对齐; 同一组数据, 精确度一致. 中英文标题在表格的正上方.
+例子见第5节.
+\begin{Rem}~~{\fontsize{9.3pt}{11.6pt}\selectfont 注释内容是小五宋体.
+请注意文章中的标点符号要在英文状态下书写, 并且注意在标点之后加空格.
+}\end{Rem}
+
+ \vspace{5mm}
+\section{{\CJKfamily{hei}应用环境}}
+ \vspace{5mm}
+
+下面是几个定理, 推论和定义的应用环境.
+
+\begin{Thm}%%%%%定理
+若$(e^{(1)}_k(t),e^{(2)}_k(t))\in S$, 则有如下关系式成立
+\begin{equation} \label{eqn1}%%\label是为了方便后面对该公式的引用，见公式的编号部分
+e^{(1)}_{k+1}(t)=G_ie^{(1)}_k(t)+F_i(x^{(1)}_{k+1}(t)-x^{(1)}_k(t)),
+\end{equation}
+其中
+\begin{eqnarray*}%%不需要编号的公式，表示之一
+&&G_1=I-(I-C_{12}\hat{C}^{-1}_2C_1)DL_1,\\
+&&G_2=I-(I+C_{12}C^{-1}_{22}C^{-1}_2C_1)^{-1}DL_1,\\
+&&F_1=-C_{11}+C_{12}\hat{C}^{-1}_2\hat{C}_1,\\
+&&F_2=(I+C_{12}C^{-1}_{22}C^{-1}_2C_1)^{-1}(-C_{11}C^{-1}_{22}C_{21}),
+\end{eqnarray*}
+\end{Thm}
+
+{\CJKfamily{hei}证明}\quad 因为
+ 所寻求的迭代学习控制为
+\begin{equation} \label{eqn2}
+u_{k+1}=u_k+Le_k,~k=1,2,\cdots,
+\end{equation}
+其中 $e_k=y_d-y_k,y_d$是期望输出,
+$y_k$是系统相对于第$k$次输入$u_k$的实际输出. $L$为要寻求的学习矩阵,
+一般要求它满足
+\begin{equation} \label{eqn3}
+\Arrowvert{I-DL}\Arrowvert<1, ~\text{或者}~ \rho(I-DL)<1.
+\end{equation}
+
+\begin{flushright}%%%%右对齐
+证毕.
+\end{flushright}
+
+\begin{Site}
+在$i=1,2$的情形下, $\Arrowvert
+x^{(1)}_{k+1}(t)-x^{(1)}_k(t)\Arrowvert$满足如下估计
+\begin{eqnarray} \label{eqn4}
+{\Arrowvert x^{(1)}_{k+1}-x^{(1)}_k\Arrowvert}_\lambda&\leqslant&
+\frac{1}{1-h_1(i)}\Arrowvert
+x^{(1)}_{k+1}(0)-x^{(1)}_k(0)\Arrowvert+
+\frac{h_2(i)}{1-h_1(i)}{\Arrowvert
+e^{(1)}_k\Arrowvert}_\lambda+\rho(Q),
+\end{eqnarray}
+\end{Site}
+
+\noindent 其中$\rho(Q)$为矩阵$Q$的谱半径. 从条件(1)可知,
+所寻求的学习矩阵$L$应使得矩阵$DL$没有零特征值. 事实上, 设
+$\lambda$是矩阵$I-DL$的任一特征值,
+由$\Arrowvert{I-DL}\Arrowvert<1$知,
+$\arrowvert{\lambda}\arrowvert<1$.
+
+\begin{Cor}
+若对系统(2), 能选择$C_1$, $C_2$, $L_1$使得$\Arrowvert
+G_i\Arrowvert+h<1$(或$\rho(G_i)+h<1$), $i=1,2$;
+  则当$(e^{(1)}_k(t), e^{(2)}_k(t))\in S$时, 有
+$$ %%不需要编号的公式，表示之一
+\lim\limits_{k \rightarrow
+\infty}e^{(1)}_k(t)=\lim\limits_{k\rightarrow\infty}e^{(2)}_k(t)
+=0,t\in[0,T],
+$$
+即流形$S$是相应于系统(2)的稳定流形. 其中 $h$是式(3)中给定的.
+\end{Cor}
+
+\begin{Def}
+定义方程
+\begin{eqnarray}\label{eqn5}
+y_1=C_{11}x_1+C_{12}x_2+D_{11}u_1.
+ \end{eqnarray}
+\end{Def}
+
+%\begin{Sup}
+%假设的例子. 经典的博弈论假设参与者均为``理性人''.
+%\end{Sup}
+
+ \vspace{5mm}
+\section{{\CJKfamily{hei}公式的例子}}
+ \vspace{5mm}
+
+
+现在给出一些比较常用的公式的例子作为参考. 如下所示.
+\subsection{{\CJKfamily{hei}例~1~}}
+下面给出来两个不同的方程组
+\begin{eqnarray}\label{eqn6}
+&&\left\{\begin{aligned}
+&\dot{x}(t)=A^c x(t)+B^cu(t)+ E^c d(t)\\
+&z(t)=C^c x(t),\\
+&t\in \mathbb{R}^+\notag.
+\end{aligned}\right. \\
+\end{eqnarray}
+\subsection{{\CJKfamily{hei}例~2~}}
+这里给出几种不同的描述矩阵的例子.
+
+1)~省略了矩阵中部分元素的例子
+\begin{eqnarray}\label{eqn7}
+\begin{pmatrix}
+a_{11}& a_{12}&\dots &a_{1n}\\
+a_{21}& a_{22}&\dots &a_{2n}\\
+\vdots&\vdots&  \ddots     &\vdots\\
+a_{n1}& a_{n2}&\dots &a_{nn}
+\end{pmatrix}.
+\end{eqnarray}
+
+2)~矩阵中小数点对齐的例子
+\begin{eqnarray} \label{eqn8}
+A_1=\left[\begin{array}{r@{ }l@{~~~~}r@{ }l} 1& &-2&\\-2& &4&
+\end{array}\right],
+\end{eqnarray}
+\begin{equation}\label{eqn9}
+A_2=\left[\begin{array}{r@{.}l@{~~~~}r@{.}l} 1&1 &-2&7\\-2&3 &4&6
+\end{array}\right].
+\end{equation}
+
+3)~调整公式字体大小的特例.
+
+用命令 \textbackslash displaystyle  可以调整在文字中过小的公式.
+$f(z)\thickapprox{\displaystyle\frac{1+\frac{1}{2}z+z^2+\frac{1}{2}z^3}{1-\frac{1}{2}z+z^2}}.$
+类似前面这样的例子.
+
+用命令 \textbackslash textstyle 可以调整公式中过大的情况. 如下
+\begin{eqnarray}\label{eqn10}
+{\bm z}^{\rm T}(t)\{A_q^{\rm T}[P(t)+I]A_q-[P(t)+I]\}{\bm z}(t)+
+{\textstyle\sum\limits_{i=1}^m}\varint\nolimits_{t-\tau_i}^t\!\!{\bm
+z}^{\rm T}(s)\{A_q^{\rm T}A_q-I\}{\bm z}(s){\rm d}s\leqslant 0.
+\end{eqnarray}
+
+4)~公式的编号问题.
+
+下文需要引用的公式需要标号. 对公式的编号可以通过命令 \textbackslash
+begin$\{equation\}$ ...\textbackslash end$\{equation\}$ 或者
+\textbackslash begin$\{eqnarray\}$ ... \textbackslash end$\{eqnarray\}$
+来实现, 具体可以参见以上公式的例子: 式(\ref{eqn1}),
+式(\ref{eqn2}),..., 式(\ref{eqn10}). 而如果不需要编号的单行公式,
+可以通过命令 \textbackslash begin$\{eqnarray*\}$ ... \textbackslash
+end$\{eqnarray*\}$来实现; 也可以通过命令双$\$$ 来实现, 例子见上.
+
+
+\vspace*{5mm}
+\section{插图({\rm Figures})}
+ \vspace{5mm}
+现在给出一些比较常用的公式的例子作为参考. Latex对于图形的要求: 文中插图请用计算机绘制(EPS图形格式), 再利用下面的环境插入图形.
+图形的位置由命令中“trim=0 0 0 0”来控制, 可以通过修正其中的4个参数来移动图形的位置.
+命令中“trim=0 0 0 0”来控制, 可以通过修正其中的4个参数来移动图形的位置.
+所给出的4个数字分别表示从图形的左边缘、\!\!下边缘、\!\!右边缘、\!\!上边缘被截去的值,
+正数表示从边缘截去的大小, 而负数表示从边缘加上的大小.
+
+\begin{center}
+\includegraphics [scale=1,trim=0 0 0 0]{1-1.eps}\\
+\label{Fig1}
+{\footnotesize {\CJKfamily{hei} 图~1 ~~ 图形标题}\\
+Fig.~1 ~~ Title of figure }
+\end{center}
+
+
+%\begin{center}
+%\includegraphics [scale=1,trim=1 0 0 0]{1-2.eps}\\
+%\label{Fig2}
+%{\footnotesize {\CJKfamily{hei} 图~2 ~~ 图形标题}\\
+%Fig.~2~~ Title of figure }
+%\end{center}
+
+%\begin{center}
+%\includegraphics [scale=1,trim=0 0 0 0]{1-3.eps}\\
+%\label{Fig3}
+%{\footnotesize {\CJKfamily{hei}图~3 ~~ 图形标题}\\
+%Fig.~3~~ Title of figure}
+%\end{center}
+
+
+ \vspace{5mm}
+\section{表格({\rm Tables})}
+ \vspace{5mm}
+
+两个表格的例子.
+\begin{multicols}{2}%%%简单的表并排的方式
+\begin{center}
+\footnotesize { {\CJKfamily{hei}表~1 ~~ 模糊控制规则}\\
+Table~1 ~~ Fuzzy control rules\\
+\label{tab:1} \vskip 3pt
+\newcommand{\rb}[1]{\raisebox{1.9ex}[-2pt]{#1}}
+%\renewcommand\tabcolsep{2pt}
+%{\fontsize{9.3pt}{11.6pt}\selectfont
+\begin{tabular}{@{ }lllllllr@{ }}\toprule
+\multicolumn{7}{c}{~~~~~~~~~~~~~~~~~~~~$\Delta e$}\\
+\cmidrule(l){2-8} \rb{~~$e$} & NB & NM & NS & ZO & PS & PM & PB\\\midrule
+NM & NB & NM & NS & ZO & PS & PM & PB\\
+NS & NB & NM & NS & ZO & PS & PM & PB\\
+NO & NB & NM & NS & ZO & PS & PM & PB\\
+NM & NB & NM & NS & ZO & PS & PM & PB\\
+NM & NB & NM & NS & ZO & PS & PM & PB\\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\begin{center}
+\footnotesize { {\CJKfamily{hei}表~2 ~~ 猴群算法中的参数}\textsuperscript{\cite{16}}\\
+Table~2 ~~ The parameters used in Monkey Algorithm\\
+\label{tab:2} \vskip 3pt
+\newcommand{\rb}[1]{\raisebox{1.9ex}[-2pt]{#1}}
+%\renewcommand\tabcolsep{2pt}
+\newlength\templ
+\setlength\templ{.2\textwidth} \addtolength\templ{-2\tabcolsep}%%%每一列所占长度
+\noindent\begin{tabular*}{0.4\textwidth}{*{4}{p{\templ}}} \toprule%%%表格的总长度
+参数 & 取值\\\midrule
+猴群规模 &  $M$ = 5\\
+爬步长 &    $a$ = 0.001\\
+爬次数  & $N_c$ = 50\\
+视野长度 &  $b$ = 0.3\\
+跳区间  & $[c, d]$ = [-1,1]\\
+循环次数 &  $N$ = 60\\
+\bottomrule
+\end{tabular*}}
+\end{center}
+\end{multicols}%%%%分栏结束
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  参考文献
+%引证的参考文献限于公开发表的, 其排列次序按文中出现先后为准. 参考文献格式如下：
+% 期刊格式：序号  作者(姓前名后). 文章题目［J］. 期刊名, 年份, 卷号(期数)：起止页码.
+%著、论文集、学位论文、报告格式：序号  作者(姓前名后). 书名［M、C、D、R］.版本.出版地：出版社, 出版年:起止页码. ??
+% 论文集中的析出文献格式：序号 作者 (姓前名后）. 析出文献题名［M、C］// 原文献主要责任者 (任? ?原文献题名. 出版地：出版者, 出版年:析出文献起止页. ??
+% 外国人名缩写点省略. 中文文献应列出对应的英文译文.
+% 凡非公开出版的论文或图书不能列入参考文献栏, 如非说明不可, 则可加注, 并在同页底说明出处, 但需使读者有处可查. ??
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vskip 12pt
+ {\fontsize{8.8pt}{10.4pt}\selectfont
+\begin{thebibliography}{99} \vskip 7pt
+\setlength{\parskip}{-2pt}  %段落之间的竖直距离
+
+%1
+\bibitem{1}
+Arimoto S, Kawamura S, Miyazaki F. Bettering operation of
+ robotics by learning[J]. Journal of Robotic Systems, 1984, 12(2): 123--140.
+%2
+\bibitem{2}
+姚仲舒, 王宏飞, 杨成梧. 一种机器人轨迹跟踪的迭代学习控制方法[J].
+兵工学报. 2004, 25(3): 330--334.\\
+Yao Zhongshu, Wang Hongfei, Yang Chengwu. A sort of iterative
+learning control algorithm for tracking of robot trajectory[J].
+Acta Armamentarii, 2004, 25(3): 330--334. (in Chinese)
+%3
+\bibitem{3}
+Dofruel M, Ozgunzer U. Stability of hybrid systems[C]//
+Proceedings of the 1994 IEEE International Symposium on Intelligent Control. New
+York: IEEE Press, 1994, 8: 129--134.
+%4
+\bibitem{4}
+Wang D. A simple iterative learning controller for manipulators with
+flexible joints[J]. Automatica, 1995, 31(9): 1341--1344.
+%5
+\bibitem{5}
+Li B. The main algorithm research on financial time
+series data mining[D]. Hefei: University of Science and Technology
+of China, 2001.
+%6
+\bibitem{6}
+薛定宇, 陈阳泉. 高等应用数学问题的MATLAB求解[M]. 第2版. 北京: 清华大学出版社, 2008.\\
+Xue Dingyu, Chen Yangquan. Advanced Applied Mathematical Problem Solutions with MATLAB[M]. 2nd Edition.
+ Beijing: Tsinghua University Press, 2008. (in Chinese)
+%7
+\bibitem{7}
+Haykin S, Brockett R W. Adaptive Filtering Theory[M].
+ New York, America: Prentice Hall, 1996.
+%8
+\bibitem{8}
+孙明轩, 黄宝键. 迭代学习控制[M]. 北京: 国防工业出版社, 1999.\\
+Sun Mingxuan, Huang Baojian. Iterative Learning Control[M]. Beijing, China: National Defence Industry Press, 1999. (in Chinese)
+
+
+\bibitem{9} Xie Z D. Learning algorithm and convergence of tracking control[J]. Systems Engineering and
+Electronics, 1998, 20(10): 4--8.
+
+\bibitem{10}
+谢胜利, 谢振东, 韦岗. 非线性分布参数系统目标跟踪的学习控制算法[J]. 自动化学报, 1999, 25(5): 627--632.\\
+Xie Shengli, Xie Zhendong, Wei Gang. Learning algorithm for
+tracking control of nonlinear distributed parameter systems[J].
+Acta Automatica Sinica, 1999, 25(5): 627--632. (in Chinese)
+
+\bibitem{11}
+Freuder E, Wallace R. Partial constraint satisfaction[J].
+Artificial Intelligence, 1992, 58(1/3): 21--70.
+
+\bibitem{12}
+ Liu B, Liu Y. Expected value of fuzzy variable and fuzzy expected value model[J].
+ IEEE Transactions on Fuzzy Systems, 2002, 10(4): 445--450.
+
+\bibitem{13}
+ 唐万梅. 基于灰色支持向量机的新型预测模型[J]. 系统工程学报, 2006, 21(4): 410--413.\\
+ Tang Wanmei. New forecasting model based on grey support vector machine[J].
+ Journal of Systems Engineering, 2006, 21(4): 410--413. (in Chinese)
+
+\bibitem{14}
+Li P, Lin Y P. A further approach on hypercube-based pairwise key
+establishment in sensor networks[C]// Proceedings of the Third
+International Conference on Ubiquitous Intelligence and Computing.
+Berlin:  Springer-Verlag, 2006: 883--892.
+
+\bibitem{15}
+Vapnik V N. The Nature of Statistical Learning Theory[M]. New York: Springer-Verlag, 2000.
+
+\bibitem{16}
+ 赵瑞清, 郝士鹏. 一类新的模糊约束满足问题的建模与求解[J]. 系统工程学报, 2010, 25(3): 415--420.\\
+ Zhao  Ruiqing, Hao Shipeng. Modeling and solving a novel class of  fuzzy constraint satisfaction problems[J].
+ Journal of Systems Engineering, 2010, 25(3): 415--420. (in Chinese)
+
+
+\end{thebibliography}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 作者简历
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent
+{\CJKfamily{hei} 作者简介:}\\
+ {\\\small
+\indent
+张~~~~三~(1961---), 男, 籍贯, 学位, 职称, 研究方向: E-mail: zhangsan@sina.com.cn;\\
+\indent 李某某~(1958---), 女, 籍贯, 学位, 职称, 研究方向:
+E-mail: limm@sina.com.cn.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 附录
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{multicols}{2}%%%开始新的分栏
+
+\vskip 7pt
+\normalsize\textbf{ 附录~~~~附录标题}\\
+\indent
+ {\fontsize{9.3pt}{11.6pt}\selectfont{
+\begin{equation*}
+\frac{\partial\Delta E(v)}{\partial\lambda}=-\frac{\lambda^{3}m\rho
+(\frac{\varphi_{1}^{2}}{\sigma_{1}^{2}}+\frac{\varphi_{2}^{2}}{\sigma_{2}^{2}}+\frac{\varphi_{3}^{2}}{\sigma_{3}^{2}})
+}
+{(\lambda^{4}-2\overline{\mu}m(\lambda^{2}+m\rho\sigma^{2}))^{2}}.
+\end{equation*}
+}}
+
+ \vskip 7pt
+
+ %\end{multicols}%  分栏结束
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  文章结束
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\end{CJK*}
+\end{document}

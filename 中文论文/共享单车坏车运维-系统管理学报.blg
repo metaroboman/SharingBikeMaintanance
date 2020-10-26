@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2019)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: 共享单车坏车运维-系统管理学报.aux
+The style file: plain.bst
+Database file #1: references.bib
+Warning--to sort, need author or key in 2002KN
+Warning--empty author in 2002KN
+Warning--empty year in KaspiDetection
+Warning--empty journal in Pal2017Analyzing
+Warning--empty publisher in 中国共享出行发展报告
+You've used 27 entries,
+            2118 wiz_defined-function locations,
+            670 strings with 8708 characters,
+and the built_in function-call counts, 8484 in all, are:
+= -- 801
+> -- 414
+< -- 1
++ -- 171
+- -- 136
+* -- 614
+:= -- 1454
+add.period$ -- 81
+call.type$ -- 27
+change.case$ -- 145
+chr.to.int$ -- 0
+cite$ -- 32
+duplicate$ -- 314
+empty$ -- 672
+format.name$ -- 136
+if$ -- 1743
+int.to.chr$ -- 0
+int.to.str$ -- 27
+missing$ -- 29
+newline$ -- 137
+num.names$ -- 54
+pop$ -- 143
+preamble$ -- 1
+purify$ -- 120
+quote$ -- 0
+skip$ -- 202
+stack$ -- 0
+substring$ -- 493
+swap$ -- 38
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 104
+warning$ -- 5
+while$ -- 74
+width$ -- 29
+write$ -- 286
+(There were 5 warnings)

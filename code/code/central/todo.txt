@@ -1,0 +1,6 @@
+1. run the simulaiton of A=2, M=8;
+2. draw the p-time graph to judge the stable state, M=8 only;
+3. calculte performance
+4. parallel computing
+5. large instance 
+6. random initial state
